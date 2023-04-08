@@ -12,7 +12,7 @@ Install the package using npm:
 ## Example
 
 ```javascript
-import {decodeJson, encodeJson} from "js-json-shortener";
+import {decodeJson, encodeJson} from "json-shortener";
 
 const shortenedJson = encodeJson({
     name: 'john',
@@ -34,10 +34,8 @@ const shortenedJson = encodeJson({
 })
 const obj = decodeJson(shortenedJson);
 
-console.log(`Shortened JSON: ${shortenedJson}`); // A78VWi7b7mVg1msuZc1TbR0yizDIkj10D0g0hluV4Y1A0BepvXE6WLtsF8Km9pPESS9mNdJr8EIEz2onew1XQL9wEh1TwkL4K4jhVqICk24cUVLX46leFozA0KkIIgTH5j3pjwNR7zRHJMT6MZNSCrGmrWShZUEOKB0a4Lz2yjA2nSGjB5zxJyQcdrQUaUGMqPqZvlb5N0YYZYK3LNMZK2WW2Ng8H1UYDej8rnqG8p0asmm6navUyFkFtnfOfHdXuWNKMK7moYoOkeUtXz3vRpxZ7InYjFPG4U7vrJy5qAR9kZ9lRqaBIMSG0qL8CRII9et7lzaGWp4wscBaRxDdN8A18ZNDBRPdFWkk 
-console.log('Shortened JSON length:', shortenedJson.length); // 356
-console.log('Decoded object length:', JSON.stringify(obj).length); // 444
-```
+console.log(`Original length: ${JSON.stringify(obj).length}`); // 444
+console.log('Shortened JSON length:', shortenedJson.length); // 320
 
-### License
-MIT.
+console.log(`Shortened JSON: ${shortenedJson}`); // 1mT=8#Z[r.#D]q7<0U8=<}@sKQo?Ug{WJYot5Ae3RURedq[?A9sLYyw#k9JR6_4dGP^%HO{gfm5XE3hUt@_Vo28o8X64Fb_F>U9CDV.gryo4dFx4<r2QC4AC)C]RW<~XxWd}LYeui&0*uOGlX?-23bw)4>{g%O1I=@@m-7oa1D;M`m*`2g`}3QyS-QK51]xp)74Z-^(feN;=sr?LMJqfI*T9*D`zj7oQDi.c~{<n2Z?)Yp8^X8{~&N-=-`Q&#yy*|dNBQi,caQIbhx?FTehnjEk4GYfbR51Xf}qNP0&UDoMu5ZPSpZ5xOz9N,;h?FcSP
+```

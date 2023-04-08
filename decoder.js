@@ -1,17 +1,14 @@
 import zlib from "zlib";
-
-const baseChars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+import {baseChars} from "./baseChars.js";
 
 function decodeJson(str) {
-    const decoder = new TextDecoder();
-
     const singleNumber = decodeNumber(str);
     const compressed = decodeNumberToBytes(singleNumber);
 
     const buffer = Buffer.from(compressed);
-    const bytes = zlib.inflateSync(buffer);
+    const bytes = zlib.inflateRawSync(buffer);
 
-    return decodeBytesToObj(decoder, bytes);
+    return JSON.parse(bytes.toString('utf8'));
 }
 
 function decodeNumberToBytes(singleNumber) {
@@ -23,10 +20,6 @@ function decodeNumberToBytes(singleNumber) {
     }
 
     return backToBytes.reverse();
-}
-
-function decodeBytesToObj(decoder, bytes) {
-    return JSON.parse(decoder.decode(bytes));
 }
 
 function decodeNumber(str) {
